@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude AI Professional Training — 30 Hours</title>
+  <meta name="description" content="30-hour Claude AI course with prompt library. Learn, Demo, Apply, Quiz — by Richards Edwin.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="bg-mesh" aria-hidden="true"></div>
+
+<div class="app" id="app">
+  <nav class="sidebar-nav glass-panel" id="sidebar" aria-label="Main navigation">
+    <div class="sidebar-brand">
+      <div class="brand-mark"><i class="ti ti-sparkles"></i></div>
+      <div class="sidebar-brand-text">
+        <h1>Claude AI Training</h1>
+        <p>30-Hour Programme</p>
+        <p class="sidebar-trainer">Richards Edwin</p>
+      </div>
+    </div>
+    <div class="sidebar-links">
+      <button class="nav-link active" data-view="home" type="button"><i class="ti ti-home"></i><span>Home</span></button>
+      <button class="nav-link" data-view="course" type="button"><i class="ti ti-book-2"></i><span>Course</span></button>
+      <button class="nav-link" data-view="library" type="button"><i class="ti ti-template"></i><span>Prompt Library</span></button>
+      <button class="nav-link" data-view="glossary" type="button"><i class="ti ti-vocabulary"></i><span>Glossary</span></button>
+      <button class="nav-link" data-view="certificate" type="button"><i class="ti ti-certificate"></i><span>Certificate</span></button>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-mod-label">Modules</div>
+      <div id="sidebar-modules"></div>
+    </div>
+    <div class="sidebar-footer glass-inset">
+      <div class="progress-ring-mini" aria-label="Progress">
+        <svg width="44" height="44" viewBox="0 0 44 44">
+          <circle class="track" cx="22" cy="22" r="18" stroke-width="3"/>
+          <circle class="fill" id="progress-ring" cx="22" cy="22" r="18" stroke-width="3" style="stroke-dashoffset:113"/>
+        </svg>
+        <span id="progress-pct">0%</span>
+      </div>
+      <div class="sidebar-progress-text"><strong id="progress-done">0</strong> of 10 modules</div>
+      <button class="sidebar-collapse-btn" id="sidebar-collapse" type="button" title="Collapse sidebar">
+        <i class="ti ti-layout-sidebar-left-collapse"></i><span>Collapse</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="main" id="main">
+    <header class="top-header glass-bar">
+      <button class="icon-btn mobile-menu" id="mobile-menu" type="button" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+      <button class="search-trigger glass-inset" id="search-open" type="button">
+        <i class="ti ti-search"></i>
+        <span>Search lessons, topics, prompts…</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="ti ti-moon"></i></button>
+        <span class="header-badge" id="header-badge">Home</span>
+        <button class="btn btn-glass btn-sm" id="notepad-btn" type="button"><i class="ti ti-note"></i> Notepad</button>
+      </div>
+    </header>
+
+    <main class="content-area">
+      <!-- HOME -->
+      <div class="view active" id="view-home">
+        <section class="hero glass-panel">
+          <p class="hero-eyebrow">30-hour professional curriculum · PDF aligned</p>
+          <h2 class="hero-title">Master Claude AI for<br>real-world work</h2>
+          <p class="hero-desc">Ten structured modules with Learn, Demo, Apply, Quiz, and Summary sections — plus a ready-to-use prompt library for business, HR, marketing, and more.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="btn-continue" type="button"><i class="ti ti-player-play"></i> Continue Learning</button>
+            <button class="btn btn-glass" data-view="library" type="button">Browse Prompt Library</button>
+          </div>
+        </section>
+
+        <div class="stats-grid">
+          <div class="stat-card glass-panel"><div class="stat-label">Modules</div><div class="stat-value">10</div><div class="stat-sub">PDF curriculum</div></div>
+          <div class="stat-card glass-panel"><div class="stat-label">Duration</div><div class="stat-value">30</div><div class="stat-sub">Hours of training</div></div>
+          <div class="stat-card glass-panel"><div class="stat-label">Prompts</div><div class="stat-value" id="stat-prompts">39</div><div class="stat-sub">Copy-ready templates</div></div>
+          <div class="stat-card glass-panel"><div class="stat-label">Your Progress</div><div class="stat-value" id="stat-progress">0%</div><div class="stat-sub"><span id="stat-done">0</span> modules done</div></div>
+        </div>
+
+        <section class="glass-panel continue-card" id="continue-card" hidden></section>
+
+        <div class="section-head">
+          <h3 class="section-title">All Modules</h3>
+          <span class="section-sub">Click to start or resume</span>
+        </div>
+        <div class="module-cards" id="home-modules"></div>
+      </div>
+
+      <!-- COURSE -->
+      <div class="view" id="view-course">
+        <nav class="module-tabs" id="module-tabs" aria-label="Module navigation"></nav>
+        <div id="course-content"></div>
+      </div>
+
+      <!-- PROMPT LIBRARY -->
+      <div class="view" id="view-library">
+        <section class="page-intro glass-panel">
+          <h2>Prompt Library</h2>
+          <p><strong id="library-count">65</strong> ready-to-use prompts — minimum 5 per category. Copy and adapt for Claude.ai.</p>
+        </section>
+        <div class="library-filters" id="library-filters"></div>
+        <div class="prompt-grid" id="prompt-grid"></div>
+      </div>
+
+      <!-- GLOSSARY -->
+      <div class="view" id="view-glossary">
+        <section class="page-intro glass-panel">
+          <h2>Glossary</h2>
+          <p>Key terms from the course. Click any term to jump to where it appears in a module, or click highlighted words while learning.</p>
+        </section>
+        <div class="glossary-search-wrap glass-inset">
+          <i class="ti ti-search"></i>
+          <input type="text" id="glossary-filter" placeholder="Filter glossary terms…" autocomplete="off">
+        </div>
+        <div class="glossary-grid" id="glossary-grid"></div>
+      </div>
+
+      <!-- CERTIFICATE -->
+      <div class="view" id="view-certificate">
+        <div class="cert-page">
+          <p id="cert-status" class="cert-status"></p>
+          <div class="cert-card glass-panel" id="cert-card">
+            <div class="cert-seal"><i class="ti ti-certificate"></i></div>
+            <div class="cert-title">Certificate of Completion</div>
+            <div class="cert-subtitle">Claude AI Professional Training · 30 Hours</div>
+            <div class="cert-name" id="cert-name-display">Your Name</div>
+            <div class="cert-details">
+              <div><div class="cert-detail-label">Date</div><div class="cert-detail-value" id="cert-date">—</div></div>
+              <div><div class="cert-detail-label">Duration</div><div class="cert-detail-value">30 hours</div></div>
+              <div><div class="cert-detail-label">Instructor</div><div class="cert-detail-value">Richards Edwin</div></div>
+            </div>
+            <p class="cert-copyright">Designed and copyrighted by Richards Edwin</p>
+          </div>
+          <div class="cert-form glass-panel">
+            <input type="text" id="cert-name-input" placeholder="Enter your full name" aria-label="Your name for certificate">
+            <button class="btn btn-primary" id="cert-save" type="button">Update Certificate</button>
+            <button class="btn btn-glass" id="cert-print" type="button"><i class="ti ti-printer"></i> Print / Save PDF</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <strong>Designed and copyrighted by Richards Edwin</strong>
+      Claude AI Professional Training · 30 hours · 10 modules
+    </footer>
+  </div>
+</div>
+
+<!-- Search overlay -->
+<div class="search-overlay" id="search-overlay">
+  <div class="search-modal glass-panel">
+    <div class="search-input-wrap">
+      <i class="ti ti-search"></i>
+      <input type="text" class="search-input" id="search-input" placeholder="Search lessons, topics, prompts…" autocomplete="off">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+
+<!-- Notepad -->
+<aside class="notepad glass-panel" id="notepad" aria-label="Notepad">
+  <div class="notepad-head">
+    <span><i class="ti ti-note"></i> My Notepad</span>
+    <div class="notepad-actions">
+      <button type="button" id="notepad-min" title="Minimize"><i class="ti ti-minus"></i></button>
+      <button type="button" id="notepad-close" title="Close"><i class="ti ti-x"></i></button>
+    </div>
+  </div>
+  <div class="notepad-body">
+    <textarea id="notepad-text" placeholder="Notes, prompt drafts, reflections, capstone work…"></textarea>
+    <div class="notepad-toolbar">
+      <button type="button" class="btn btn-glass btn-sm" id="notepad-export"><i class="ti ti-download"></i> Export .txt</button>
+    </div>
+    <div class="notepad-status" id="notepad-status">Auto-saved locally</div>
+  </div>
+</aside>
+
+<script src="js/data/modules.js"></script>
+<script src="js/data/prompts.js"></script>
+<script src="js/data/glossary.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
