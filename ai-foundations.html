@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Foundations & Career Intelligence Hub — Richards Edwin</title>
+  <meta name="description" content="Understand AI, explore the ecosystem, and discover your next career. Beginner-friendly AI literacy for experienced professionals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/foundations.css">
+</head>
+<body>
+<div class="bg-mesh" aria-hidden="true"></div>
+
+<div class="app" id="app">
+  <nav class="sidebar-nav glass-panel" id="sidebar" aria-label="Main navigation">
+    <div class="sidebar-brand">
+      <div class="brand-mark"><i class="ti ti-brain"></i></div>
+      <div class="sidebar-brand-text">
+        <h1>AI Foundations</h1>
+        <p class="af-tagline">Understand AI. Explore the Ecosystem. Discover Your Next Career.</p>
+        <p class="sidebar-trainer">Richards Edwin</p>
+      </div>
+    </div>
+    <div class="sidebar-links">
+      <div class="programme-switch glass-inset" aria-label="Learning programmes">
+        <a class="programme-link" href="index.html">
+          <i class="ti ti-sparkles"></i><span>Claude AI Training</span>
+        </a>
+        <a class="programme-link active" href="ai-foundations.html" aria-current="page">
+          <i class="ti ti-brain"></i><span>AI Foundations</span>
+        </a>
+      </div>
+      <div class="sidebar-divider"></div>
+      <button class="nav-link active" data-view="overview" type="button"><i class="ti ti-layout-dashboard"></i><span>Overview</span></button>
+      <button class="nav-link" data-view="fundamentals" type="button"><i class="ti ti-book"></i><span>AI Fundamentals</span></button>
+      <button class="nav-link" data-view="glossary" type="button"><i class="ti ti-vocabulary"></i><span>AI Glossary</span></button>
+      <button class="nav-link" data-view="tools" type="button"><i class="ti ti-apps"></i><span>AI Tools Explorer</span></button>
+      <button class="nav-link" data-view="prompts" type="button"><i class="ti ti-prompt"></i><span>Prompt Engineering</span></button>
+      <button class="nav-link" data-view="workplace" type="button"><i class="ti ti-briefcase"></i><span>AI at Work</span></button>
+      <button class="nav-link" data-view="agentic" type="button"><i class="ti ti-topology-star-3"></i><span>Agentic AI</span></button>
+      <button class="nav-link" data-view="news" type="button"><i class="ti ti-news"></i><span>AI Industry Pulse</span></button>
+      <button class="nav-link" data-view="features" type="button"><i class="ti ti-sparkles"></i><span>What's New</span></button>
+      <button class="nav-link" data-view="careers" type="button"><i class="ti ti-map"></i><span>Career Navigator</span></button>
+      <button class="nav-link" data-view="certs" type="button"><i class="ti ti-certificate"></i><span>Certifications</span></button>
+      <button class="nav-link" data-view="plan" type="button"><i class="ti ti-calendar"></i><span>10-Day Plan</span></button>
+      <button class="nav-link" data-view="assess" type="button"><i class="ti ti-clipboard-check"></i><span>Assessment</span></button>
+      <button class="nav-link" data-view="roadmap" type="button"><i class="ti ti-road"></i><span>90-Day Roadmap</span></button>
+    </div>
+    <div class="sidebar-footer glass-inset">
+      <div class="sidebar-progress-text"><strong id="af-progress-pct">0%</strong> learning progress</div>
+      <div class="af-progress-bar"><div class="af-progress-fill" id="af-progress-fill" style="width:0%"></div></div>
+      <button class="sidebar-collapse-btn" id="sidebar-collapse" type="button" title="Collapse sidebar">
+        <i class="ti ti-layout-sidebar-left-collapse"></i><span>Collapse</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="main" id="main">
+    <header class="top-header glass-bar">
+      <button class="icon-btn mobile-menu" id="mobile-menu" type="button" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+      <button class="search-trigger glass-inset" id="af-search-open" type="button">
+        <i class="ti ti-search"></i>
+        <span>Search glossary, tools, careers…</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="ti ti-moon"></i></button>
+        <span class="header-badge" id="header-badge">Overview</span>
+      </div>
+    </header>
+
+    <main class="content-area">
+      <div class="view active" id="view-root"></div>
+    </main>
+
+    <footer class="site-footer">
+      <strong>Designed and copyrighted by Richards Edwin</strong>
+      AI Foundations &amp; Career Intelligence Hub · AI literacy for professionals
+    </footer>
+  </div>
+</div>
+
+<div class="search-overlay" id="search-overlay">
+  <div class="search-modal glass-panel">
+    <div class="search-input-wrap">
+      <i class="ti ti-search"></i>
+      <input type="text" class="search-input" id="search-input" placeholder="Search terminology, tools, careers…" autocomplete="off">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+
+<script src="js/data/foundations/fundamentals.js"></script>
+<script src="js/data/foundations/glossary-af.js"></script>
+<script src="js/data/foundations/tools.js"></script>
+<script src="js/data/foundations/prompt-lab.js"></script>
+<script src="js/data/foundations/workplace.js"></script>
+<script src="js/data/foundations/agentic.js"></script>
+<script src="js/data/foundations/careers.js"></script>
+<script src="js/data/foundations/certifications.js"></script>
+<script src="js/data/foundations/learning-plan.js"></script>
+<script src="js/data/foundations/features.js"></script>
+<script src="js/data/foundations/assessment.js"></script>
+<script src="js/data/foundations/news-fallback.js"></script>
+<script src="js/foundations-app.js"></script>
+</body>
+</html>

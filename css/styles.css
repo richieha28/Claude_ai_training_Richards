@@ -1235,6 +1235,24 @@ button { cursor: pointer; border: none; background: none; }
 .notepad-toolbar { margin-top: 8px; }
 .remember-next { margin-top: 12px; font-size: 14px; opacity: 0.95; }
 
+/* Programme switcher (shared across verticals) */
+.programme-switch {
+  display: flex; flex-direction: column; gap: 4px; padding: 6px; margin: 0 8px 4px;
+  border-radius: var(--radius-sm);
+}
+.programme-link {
+  display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px;
+  font-size: 12px; font-weight: 600; color: var(--text-secondary); text-decoration: none;
+  transition: var(--transition);
+}
+.programme-link i { font-size: 15px; }
+.programme-link:hover { background: rgba(255,255,255,0.7); color: var(--text); }
+.programme-link.active {
+  background: var(--accent-soft); color: var(--accent);
+}
+[data-theme="dark"] .programme-link:hover { background: rgba(30,41,59,0.8); }
+[data-theme="dark"] .programme-link.active { background: rgba(0,113,227,0.2); color: #93c5fd; }
+
 @media print {
   .sidebar-nav, .top-header, .notepad, .module-tabs, .training-nav-footer,
   .search-overlay, .glossary-popover, .cert-form { display: none !important; }
