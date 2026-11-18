@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2026-11-18T04:14:17.637Z",
+  "lastFetched": "2026-11-18T15:03:31.310Z",
   "status": "ok",
   "sources": [
     {
@@ -35,6 +35,54 @@
   ],
   "items": [
     {
+      "headline": "Time-Series Models in the Streamhouse: A New Frontier and Use Cases",
+      "company": "Hugging Face",
+      "source": "Hugging Face Blog",
+      "category": "Research",
+      "publishedAt": "Wed, 18 Nov 2026 15:00:23 GMT",
+      "summary": "See the original article for details.",
+      "whyItMatters": "Industry development — review the source for implications for your role.",
+      "careerImplications": "",
+      "url": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse",
+      "fetchedAt": "2026-11-18T15:03:31.283Z"
+    },
+    {
+      "headline": "NVIDIA RTX Spark Compact Desktops Out Now",
+      "company": "NVIDIA",
+      "source": "NVIDIA News",
+      "category": "Enterprise AI",
+      "publishedAt": "Wed, 18 Nov 2026 14:00:31 GMT",
+      "summary": "New NVIDIA RTX Spark compact desktops from ASUS, Dell and MSI are available today, bringing local AI agents, image and video generation, and model fine-tuning to a dedicated Windows PC. With up to 128GB of unified memory and NVIDIA’s AI software stack, these systems provide room for larger local models alongside RTX-ac",
+      "whyItMatters": "Industry development — review the source for implications for your role.",
+      "careerImplications": "",
+      "url": "https://blogs.nvidia.com/blog/rtx-spark-desktop-local-ai-available-now/",
+      "fetchedAt": "2026-11-18T15:03:31.307Z"
+    },
+    {
+      "headline": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+      "company": "OpenAI",
+      "source": "OpenAI News",
+      "category": "AI models",
+      "publishedAt": "Wed, 18 Nov 2026 00:00:00 GMT",
+      "summary": "Le Groupe Figaro and OpenAI partner to bring Le Figaro’s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
+      "whyItMatters": "Industry development — review the source for implications for your role.",
+      "careerImplications": "",
+      "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
+      "fetchedAt": "2026-11-18T15:03:31.139Z"
+    },
+    {
+      "headline": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages",
+      "company": "Hugging Face",
+      "source": "Hugging Face Blog",
+      "category": "Research",
+      "publishedAt": "Wed, 18 Nov 2026 00:00:00 GMT",
+      "summary": "See the original article for details.",
+      "whyItMatters": "Industry development — review the source for implications for your role.",
+      "careerImplications": "",
+      "url": "https://huggingface.co/blog/rumble-2-flash",
+      "fetchedAt": "2026-11-18T15:03:31.283Z"
+    },
+    {
       "headline": "NVIDIA Expands Commitments With Supply Chain Partners to Support AI Infrastructure Buildout",
       "company": "NVIDIA",
       "source": "NVIDIA News",
@@ -44,7 +92,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://nvidianews.nvidia.com/news/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout",
-      "fetchedAt": "2026-11-18T04:14:17.489Z"
+      "fetchedAt": "2026-11-18T15:03:31.307Z"
     },
     {
       "headline": "NVIDIA Announces Financial Results for Third Quarter Fiscal 2027",
@@ -56,7 +104,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027",
-      "fetchedAt": "2026-11-18T04:14:17.490Z"
+      "fetchedAt": "2026-11-18T15:03:31.308Z"
     },
     {
       "headline": "Ignite 2026: Building the frontier ecosystem",
@@ -68,7 +116,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.microsoft.com/blog/2026/11/17/ignite-2026-building-the-frontier-ecosystem/",
-      "fetchedAt": "2026-11-18T04:14:17.401Z"
+      "fetchedAt": "2026-11-18T15:03:31.131Z"
     },
     {
       "headline": "Introducing GPT-6.2 Astra and Sol",
@@ -80,7 +128,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
-      "fetchedAt": "2026-11-18T04:14:17.409Z"
+      "fetchedAt": "2026-11-18T15:03:31.139Z"
     },
     {
       "headline": "Put Gemini to work for you",
@@ -92,7 +140,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
-      "fetchedAt": "2026-11-18T04:14:17.501Z"
+      "fetchedAt": "2026-11-18T15:03:31.310Z"
     },
     {
       "headline": "Ian Buck Kicks Off NVIDIA’s Week at SC26 as Science Enters the Age of Agents",
@@ -104,7 +152,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.nvidia.com/blog/ian-buck-sc26/",
-      "fetchedAt": "2026-11-18T04:14:17.490Z"
+      "fetchedAt": "2026-11-18T15:03:31.308Z"
     },
     {
       "headline": "NVIDIA Board of Directors Establishes National Security and Export Control Oversight Committee",
@@ -116,7 +164,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://nvidianews.nvidia.com/news/nvidia-board-of-directors-establishes-national-security-and-export-control-oversight-committee",
-      "fetchedAt": "2026-11-18T04:14:17.490Z"
+      "fetchedAt": "2026-11-18T15:03:31.308Z"
     },
     {
       "headline": "Introducing ChatGPT for Sales",
@@ -128,7 +176,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/index/introducing-chatgpt-for-sales",
-      "fetchedAt": "2026-11-18T04:14:17.409Z"
+      "fetchedAt": "2026-11-18T15:03:31.139Z"
     },
     {
       "headline": "Strengthening NATO and allied cyber defenses with AI",
@@ -140,7 +188,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
-      "fetchedAt": "2026-11-18T04:14:17.409Z"
+      "fetchedAt": "2026-11-18T15:03:31.139Z"
     },
     {
       "headline": "Astra for Law leads in legal intelligence",
@@ -152,7 +200,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/index/astra-law-6-2",
-      "fetchedAt": "2026-11-18T04:14:17.409Z"
+      "fetchedAt": "2026-11-18T15:03:31.139Z"
     },
     {
       "headline": "Introducing OpenAI for Chile",
@@ -164,7 +212,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/index/introducing-openai-for-chile",
-      "fetchedAt": "2026-11-18T04:14:17.409Z"
+      "fetchedAt": "2026-11-18T15:03:31.139Z"
     },
     {
       "headline": "NVIDIA DGX Spark Developer Kit Turns a Desk Into a Supercomputing Lab",
@@ -176,7 +224,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.nvidia.com/blog/dgx-spark-hpc-developer-kit-sc26/",
-      "fetchedAt": "2026-11-18T04:14:17.490Z"
+      "fetchedAt": "2026-11-18T15:03:31.308Z"
     },
     {
       "headline": "How the World’s Most Advanced AI Infrastructure Supply Chain Invents the Future",
@@ -188,7 +236,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.nvidia.com/blog/ai-infrastructure-supply-chain/",
-      "fetchedAt": "2026-11-18T04:14:17.490Z"
+      "fetchedAt": "2026-11-18T15:03:31.308Z"
     },
     {
       "headline": "Broadening access to AI for scientists",
@@ -200,7 +248,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
-      "fetchedAt": "2026-11-18T04:14:17.409Z"
+      "fetchedAt": "2026-11-18T15:03:31.139Z"
     },
     {
       "headline": "Strengthening the fight against online child sexual abuse with new tools and support",
@@ -212,7 +260,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/index/strengthening-online-child-safety",
-      "fetchedAt": "2026-11-18T04:14:17.409Z"
+      "fetchedAt": "2026-11-18T15:03:31.139Z"
     },
     {
       "headline": "Lambda Boosts AI Factory Resiliency and Efficiency With NVIDIA Photonics",
@@ -224,19 +272,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.nvidia.com/blog/lambda-photonics/",
-      "fetchedAt": "2026-11-18T04:14:17.490Z"
-    },
-    {
-      "headline": "NVIDIA Expands Slurm to Bring Quantum Computing Into Supercomputing",
-      "company": "NVIDIA",
-      "source": "NVIDIA News",
-      "category": "Enterprise AI",
-      "publishedAt": "Mon, 16 Nov 2026 16:00:47 GMT",
-      "summary": "Quantum processor deployments at supercomputing centers have grown nearly sevenfold over the past five years, with nearly 30 supercomputing centers around the world now in the process of deploying over 50 quantum processors.  Many of these centers use Slurm to run scientific supercomputing workloads, so expanding its s",
-      "whyItMatters": "Industry development — review the source for implications for your role.",
-      "careerImplications": "",
-      "url": "https://blogs.nvidia.com/blog/slurm-quantum-computing-supercomputing/",
-      "fetchedAt": "2026-11-18T04:14:17.490Z"
+      "fetchedAt": "2026-11-18T15:03:31.308Z"
     },
     {
       "headline": "New Ask Maps features to help with holiday travel and prep",
@@ -248,19 +284,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
-      "fetchedAt": "2026-11-18T04:14:17.501Z"
-    },
-    {
-      "headline": "Science at the Frontier: How scientists use ChatGPT",
-      "company": "OpenAI",
-      "source": "OpenAI News",
-      "category": "AI models",
-      "publishedAt": "Mon, 16 Nov 2026 12:00:00 GMT",
-      "summary": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery.",
-      "whyItMatters": "Industry development — review the source for implications for your role.",
-      "careerImplications": "",
-      "url": "https://openai.com/index/science-at-the-frontier",
-      "fetchedAt": "2026-11-18T04:14:17.409Z"
+      "fetchedAt": "2026-11-18T15:03:31.310Z"
     },
     {
       "headline": "Hugging Face and OpenRouter join forces to make open-weight models easy to run",
@@ -272,7 +296,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/openrouter",
-      "fetchedAt": "2026-11-18T04:14:17.451Z"
+      "fetchedAt": "2026-11-18T15:03:31.283Z"
     },
     {
       "headline": "Build a Robot Pick-and-Place Simulation with SimReady Assets",
@@ -284,7 +308,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place",
-      "fetchedAt": "2026-11-18T04:14:17.451Z"
+      "fetchedAt": "2026-11-18T15:03:31.283Z"
     },
     {
       "headline": "XYBench: Helping with the problem behind the question",
@@ -296,7 +320,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/allenai/xybench",
-      "fetchedAt": "2026-11-18T04:14:17.451Z"
+      "fetchedAt": "2026-11-18T15:03:31.283Z"
     },
     {
       "headline": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem",
@@ -308,7 +332,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
-      "fetchedAt": "2026-11-18T04:14:17.451Z"
+      "fetchedAt": "2026-11-18T15:03:31.283Z"
     },
     {
       "headline": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
@@ -320,7 +344,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
-      "fetchedAt": "2026-11-18T04:14:17.451Z"
+      "fetchedAt": "2026-11-18T15:03:31.283Z"
     },
     {
       "headline": "Introducing Gemini 4 Hydrogen",
@@ -332,7 +356,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
-      "fetchedAt": "2026-11-18T04:14:17.637Z"
+      "fetchedAt": "2026-11-18T15:03:31.270Z"
     },
     {
       "headline": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
@@ -344,7 +368,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
-      "fetchedAt": "2026-11-18T04:14:17.501Z"
+      "fetchedAt": "2026-11-18T15:03:31.310Z"
     },
     {
       "headline": "From AI ambition to business impact",
@@ -356,7 +380,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.microsoft.com/blog/2026/11/12/from-ai-ambition-to-business-impact/",
-      "fetchedAt": "2026-11-18T04:14:17.401Z"
+      "fetchedAt": "2026-11-18T15:03:31.131Z"
     },
     {
       "headline": "Scaling AI value without losing control: Lessons from Frontier Firms",
@@ -368,7 +392,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.microsoft.com/blog/2026/11/12/scaling-ai-value-without-losing-control-lessons-from-frontier-firms/",
-      "fetchedAt": "2026-11-18T04:14:17.402Z"
+      "fetchedAt": "2026-11-18T15:03:31.131Z"
     },
     {
       "headline": "The Definitive Fine-Tuning Guide for 3D Generation Models",
@@ -380,7 +404,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/3d-lora-finetuning",
-      "fetchedAt": "2026-11-18T04:14:17.451Z"
+      "fetchedAt": "2026-11-18T15:03:31.283Z"
     },
     {
       "headline": "Gemini Decisions API: Fast, calibrated multimodal decisions",
@@ -392,7 +416,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
-      "fetchedAt": "2026-11-18T04:14:17.501Z"
+      "fetchedAt": "2026-11-18T15:03:31.310Z"
     },
     {
       "headline": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
@@ -404,7 +428,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
-      "fetchedAt": "2026-11-18T04:14:17.501Z"
+      "fetchedAt": "2026-11-18T15:03:31.310Z"
     },
     {
       "headline": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
@@ -416,7 +440,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
-      "fetchedAt": "2026-11-18T04:14:17.637Z"
+      "fetchedAt": "2026-11-18T15:03:31.270Z"
     },
     {
       "headline": "Experience the art and legacy of Dr. Esther Mahlangu",
@@ -428,31 +452,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu/",
-      "fetchedAt": "2026-11-18T04:14:17.501Z"
-    },
-    {
-      "headline": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
-      "company": "Hugging Face",
-      "source": "Hugging Face Blog",
-      "category": "Research",
-      "publishedAt": "Wed, 11 Nov 2026 05:01:16 GMT",
-      "summary": "See the original article for details.",
-      "whyItMatters": "Industry development — review the source for implications for your role.",
-      "careerImplications": "",
-      "url": "https://huggingface.co/blog/qvac/botpsy",
-      "fetchedAt": "2026-11-18T04:14:17.451Z"
-    },
-    {
-      "headline": "Token Pooling-Aware Training for Multi-Vector Embedding Models",
-      "company": "Hugging Face",
-      "source": "Hugging Face Blog",
-      "category": "Research",
-      "publishedAt": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "summary": "See the original article for details.",
-      "whyItMatters": "Industry development — review the source for implications for your role.",
-      "careerImplications": "",
-      "url": "https://huggingface.co/blog/token-pooling",
-      "fetchedAt": "2026-11-18T04:14:17.451Z"
+      "fetchedAt": "2026-11-18T15:03:31.310Z"
     },
     {
       "headline": "Gemini Intelligence: New features, on more devices",
@@ -464,7 +464,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
-      "fetchedAt": "2026-11-18T04:14:17.501Z"
+      "fetchedAt": "2026-11-18T15:03:31.310Z"
     },
     {
       "headline": "Gemini 4 Carbon is now available",
@@ -476,7 +476,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
-      "fetchedAt": "2026-11-18T04:14:17.637Z"
+      "fetchedAt": "2026-11-18T15:03:31.271Z"
     },
     {
       "headline": "We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.",
@@ -488,7 +488,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/",
-      "fetchedAt": "2026-11-18T04:14:17.501Z"
+      "fetchedAt": "2026-11-18T15:03:31.310Z"
     },
     {
       "headline": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
@@ -500,7 +500,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
-      "fetchedAt": "2026-11-18T04:14:17.637Z"
+      "fetchedAt": "2026-11-18T15:03:31.271Z"
     },
     {
       "headline": "Opening the datasets behind our AI weather models",
@@ -512,7 +512,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
-      "fetchedAt": "2026-11-18T04:14:17.637Z"
+      "fetchedAt": "2026-11-18T15:03:31.271Z"
     }
   ]
 }
