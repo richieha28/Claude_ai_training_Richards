@@ -132,11 +132,12 @@
     const nextDay = AF_LEARNING_PLAN.find(d => !state.daysDone.includes(d.day)) || AF_LEARNING_PLAN[0];
 
     return `
-      <section class="af-hero-mini glass-panel">
-        <p class="hero-eyebrow">AI literacy for experienced professionals</p>
-        <h2>Understand AI. Explore the Ecosystem.<br>Discover Your Next Career.</h2>
-        <p>A practical, non-coding hub to build AI fluency, follow industry developments, and map a career path that fits your experience.</p>
-        <div class="hero-actions" style="margin-top:1rem">
+      <section class="af-hero-mini hero glass-panel">
+        <p class="hero-eyebrow">Richards Edwin · AI literacy for professionals</p>
+        <h2 class="hero-brand">AI Foundations</h2>
+        <p class="hero-title">Understand AI. Explore the ecosystem. Discover your next career.</p>
+        <p class="hero-desc">A practical, non-coding hub to build AI fluency, follow industry developments, and map a career path that fits your experience.</p>
+        <div class="hero-actions">
           <button class="btn btn-primary" type="button" data-goto="plan"><i class="ti ti-player-play"></i> Start 10-Day Plan</button>
           <button class="btn btn-glass" type="button" data-goto="glossary">Open Glossary</button>
         </div>

@@ -290,13 +290,13 @@
     const meta = AA_META;
     const cont = findContinueTarget();
     return (
-      '<section class="aa-hero glass-panel">' +
-        '<p class="aa-eyebrow">Simple learning path for busy professionals</p>' +
-        '<h2>' + esc(meta.title) + '</h2>' +
-        '<p>' + esc(meta.subtitle) + '</p>' +
-        '<p class="aa-callout" style="margin-top:12px"><strong>Who this is for:</strong> ' + esc(meta.audienceNote) + '</p>' +
-        '<p class="aa-callout" style="margin-top:8px"><strong>Good news:</strong> ' + esc(meta.freePolicy) + '</p>' +
-        '<div class="hero-actions" style="margin-top:1rem;display:flex;gap:8px;flex-wrap:wrap">' +
+      '<section class="aa-hero hero glass-panel">' +
+        '<p class="hero-eyebrow">Richards Edwin · Workflow Automation & Productivity</p>' +
+        '<h2 class="hero-brand">' + esc(meta.title) + '</h2>' +
+        '<p class="hero-title">' + esc(meta.subtitle) + '</p>' +
+        '<p class="hero-desc">' + esc(meta.audienceNote) + '</p>' +
+        '<p class="aa-callout"><strong>Good news:</strong> ' + esc(meta.freePolicy) + '</p>' +
+        '<div class="hero-actions" style="margin-top:1rem">' +
           (cont
             ? ('<button class="btn btn-primary" type="button" data-open-module="' + esc(cont.module.id) + '" data-course="' + esc(cont.courseId) + '"><i class="ti ti-player-play"></i> Continue: Module ' + cont.module.number + '</button>')
             : '<button class="btn btn-primary" type="button" data-open-course="notion"><i class="ti ti-player-play"></i> Start with Notion</button>') +

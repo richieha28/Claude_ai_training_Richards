@@ -26,11 +26,11 @@
   display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem; align-items: center;
 }
 .af-search {
-  flex: 1; min-width: 180px; padding: 10px 14px; border-radius: 980px;
+  flex: 1; min-width: 180px; padding: 10px 14px; border-radius: var(--radius-btn);
   border: 1px solid var(--border); background: rgba(255,255,255,0.8);
 }
 .af-chip {
-  padding: 6px 12px; border-radius: 980px; font-size: 12px; font-weight: 500;
+  padding: 6px 12px; border-radius: 9px; font-size: 12px; font-weight: 600;
   border: 1px solid var(--border); background: rgba(255,255,255,0.7); color: var(--text-secondary);
 }
 .af-chip.active, .af-chip:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
@@ -46,7 +46,7 @@
 .af-card-extra h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin: 10px 0 4px; }
 .af-related { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .af-related button {
-  font-size: 12px; padding: 4px 10px; border-radius: 980px; background: var(--blue-50); color: var(--accent);
+  font-size: 12px; padding: 4px 10px; border-radius: 8px; background: var(--blue-50); color: var(--accent);
 }
 
 .af-progress-bar {
@@ -59,7 +59,7 @@
 .af-tool-card h3 { font-size: 16px; font-weight: 600; }
 .af-badge {
   display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase;
-  padding: 3px 8px; border-radius: 980px; background: var(--accent-soft); color: var(--accent); margin-right: 4px;
+  padding: 3px 8px; border-radius: 7px; background: var(--accent-soft); color: var(--accent); margin-right: 4px;
 }
 .af-badge.ga { background: var(--success-soft); color: var(--success); }
 .af-badge.preview { background: var(--warning-soft); color: var(--warning); }
