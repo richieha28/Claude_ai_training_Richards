@@ -1,15 +1,27 @@
 # Claude AI Professional Training + AI Foundations Hub
 
-Static GitHub Pages learning site with two independent programmes:
+Static GitHub Pages learning site with three independent programmes:
 
 1. **Claude AI Professional Training** — `index.html`
 2. **AI Foundations & Career Intelligence Hub** — `ai-foundations.html`
+3. **Notion & n8n Automation Academy** — `automation-academy.html`
 
 **Tagline (Foundations):** Understand AI. Explore the Ecosystem. Discover Your Next Career.
 
 **Designed and copyrighted by Richards Edwin**
 
 Live site: https://richieha28.github.io/Claude_ai_training_Richards/
+
+## Features — Automation Academy
+
+- Category: **Workflow Automation & Productivity**
+- Pathway: Notion Mastery (10) → n8n Automation Mastery (12) → Notion + n8n + AI (10)
+- Free-stack design: Notion Free + n8n Community Edition via Docker Desktop
+- Interactive workflow simulator (educational, not live n8n)
+- Module lessons, exercises, quizzes, capstone checklists, badges, certificate
+- Progress in `localStorage` (`aa_*` keys — does not reset Claude/Foundations progress)
+
+Hub URL: `https://richieha28.github.io/Claude_ai_training_Richards/automation-academy.html`
 
 ## Features — AI Foundations Hub
 
@@ -64,14 +76,18 @@ No API keys are required for the default RSS sources.
 ```
 ├── index.html                 # Claude AI Professional Training
 ├── ai-foundations.html        # AI Foundations & Career Intelligence Hub
+├── automation-academy.html    # Notion & n8n Automation Academy
 ├── .nojekyll
 ├── data/news.json             # Generated Industry Pulse dataset
 ├── css/styles.css             # Shared design system
-├── css/foundations.css        # Hub-specific styles
+├── css/foundations.css        # Foundations styles
+├── css/academy.css            # Automation Academy styles
 ├── js/app.js                  # Claude programme app
 ├── js/foundations-app.js      # Foundations hub app
+├── js/academy-app.js          # Automation Academy app
 ├── js/data/                   # Claude course data
 ├── js/data/foundations/       # Foundations modules data
+├── js/data/academy/           # Academy course + simulator data
 ├── scripts/fetch-ai-news.mjs
 └── .github/workflows/fetch-ai-news.yml
 ```
