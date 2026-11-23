@@ -14,16 +14,23 @@
   };
 
   const VIEWS = {
-    overview: 'Overview',
-    pathway: 'Learning Pathway',
-    notion: 'Notion Mastery',
-    n8n: 'n8n Automation',
-    integration: 'Notion + n8n + AI',
-    module: 'Module',
-    simulator: 'Workflow Simulator',
-    badges: 'Badges',
-    assessment: 'Pathway Assessment',
+    overview: 'Home',
+    pathway: 'How to learn',
+    notion: '1. Notion',
+    n8n: '2. Automation',
+    integration: '3. Connect it all',
+    module: 'Lesson',
+    simulator: 'Try a workflow',
+    badges: 'Your badges',
+    assessment: 'Final quiz',
     certificate: 'Certificate'
+  };
+
+  const LESSON_TYPE_LABELS = {
+    reading: 'Read',
+    walkthrough: 'Step by step',
+    demo: 'See an example',
+    diagram: 'Picture it'
   };
 
   const COURSES = {
@@ -112,6 +119,58 @@
     };
   }
 
+  function courseMeta(courseId) {
+    return (AA_META.courses || []).find(function (c) { return c.id === courseId; }) || null;
+  }
+
+  function findContinueTarget() {
+    var order = ['notion', 'n8n', 'integration'];
+    for (var i = 0; i < order.length; i++) {
+      var cid = order[i];
+      var course = COURSES[cid];
+      if (!course) continue;
+      for (var j = 0; j < course.modules.length; j++) {
+        var m = course.modules[j];
+        if (!state.modulesDone.includes(m.id)) {
+          return { courseId: cid, module: m, courseTitle: (courseMeta(cid) || {}).shortTitle || course.title };
+        }
+      }
+    }
+    return null;
+  }
+
+  function siblingModules(courseId, moduleId) {
+    var course = COURSES[courseId];
+    if (!course) return { prev: null, next: null, index: -1 };
+    var idx = course.modules.findIndex(function (m) { return m.id === moduleId; });
+    return {
+      index: idx,
+      prev: idx > 0 ? course.modules[idx - 1] : null,
+      next: idx >= 0 && idx < course.modules.length - 1 ? course.modules[idx + 1] : null
+    };
+  }
+
+  function plainCourseBlurb(courseId) {
+    var meta = courseMeta(courseId);
+    return meta ? (meta.plainGoal || meta.blurb || '') : '';
+  }
+
+  function friendlyLessonType(type) {
+    return LESSON_TYPE_LABELS[type] || 'Learn';
+  }
+
+  function breadcrumbs(parts) {
+    return '<nav class="aa-breadcrumbs" aria-label="Breadcrumb">' +
+      parts.map(function (p, i) {
+        if (p.action) {
+          return '<button type="button" class="aa-crumb-btn" data-crumb="' + esc(p.action) + '">' + esc(p.label) + '</button>' +
+            (i < parts.length - 1 ? '<span class="aa-crumb-sep">/</span>' : '');
+        }
+        return '<span class="aa-crumb-current">' + esc(p.label) + '</span>';
+      }).join('') +
+    '</nav>';
+  }
+
   function updateProgressUI() {
     const pct = progressPct();
     const fill = document.getElementById('aa-progress-fill');
@@ -193,7 +252,7 @@
       if (!state.modulesDone.includes(mod.id)) {
         state.modulesDone.push(mod.id);
         save();
-        toast('Module complete');
+        toast('Nice work - topic complete');
       }
       return true;
     }
@@ -229,50 +288,54 @@
 
   function renderOverview() {
     const meta = AA_META;
-    const n = courseProgress('notion');
-    const a = courseProgress('n8n');
-    const i = courseProgress('integration');
+    const cont = findContinueTarget();
     return (
       '<section class="aa-hero glass-panel">' +
-        '<p class="aa-eyebrow">' + esc(meta.category) + '</p>' +
+        '<p class="aa-eyebrow">Simple learning path for busy professionals</p>' +
         '<h2>' + esc(meta.title) + '</h2>' +
         '<p>' + esc(meta.subtitle) + '</p>' +
-        '<p class="aa-callout" style="margin-top:12px"><strong>Free-stack policy:</strong> ' + esc(meta.freePolicy) + '</p>' +
+        '<p class="aa-callout" style="margin-top:12px"><strong>Who this is for:</strong> ' + esc(meta.audienceNote) + '</p>' +
+        '<p class="aa-callout" style="margin-top:8px"><strong>Good news:</strong> ' + esc(meta.freePolicy) + '</p>' +
         '<div class="hero-actions" style="margin-top:1rem;display:flex;gap:8px;flex-wrap:wrap">' +
-          '<button class="btn btn-primary" type="button" data-goto="pathway"><i class="ti ti-player-play"></i> Start pathway</button>' +
-          '<button class="btn btn-glass" type="button" data-goto="simulator">Open workflow simulator</button>' +
+          (cont
+            ? ('<button class="btn btn-primary" type="button" data-open-module="' + esc(cont.module.id) + '" data-course="' + esc(cont.courseId) + '"><i class="ti ti-player-play"></i> Continue: Module ' + cont.module.number + '</button>')
+            : '<button class="btn btn-primary" type="button" data-open-course="notion"><i class="ti ti-player-play"></i> Start with Notion</button>') +
+          '<button class="btn btn-glass" type="button" data-goto="pathway">See the simple plan</button>' +
         '</div>' +
       '</section>' +
+      (cont
+        ? ('<article class="aa-continue glass-panel">' +
+            '<div><p class="aa-eyebrow">Pick up where you left off</p>' +
+            '<h3 style="font-size:16px;margin:4px 0 6px">' + esc(cont.courseTitle) + ' · Module ' + cont.module.number + ': ' + esc(cont.module.title) + '</h3>' +
+            '<p style="font-size:13px;color:var(--text-secondary)">About ' + cont.module.durationMin + ' minutes. One clear topic at a time.</p></div>' +
+            '<button class="btn btn-primary" type="button" data-open-module="' + esc(cont.module.id) + '" data-course="' + esc(cont.courseId) + '">Continue</button>' +
+          '</article>')
+        : '') +
       '<div class="aa-stat-grid">' +
-        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + progressPct() + '%</div><div class="aa-stat-label">Overall progress</div></div>' +
-        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + state.modulesDone.length + '/' + allModules().length + '</div><div class="aa-stat-label">Modules complete</div></div>' +
-        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + state.lessonsDone.length + '</div><div class="aa-stat-label">Lessons complete</div></div>' +
-        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + state.badges.length + '</div><div class="aa-stat-label">Badges earned</div></div>' +
+        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + progressPct() + '%</div><div class="aa-stat-label">Your progress</div></div>' +
+        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + state.modulesDone.length + '/' + allModules().length + '</div><div class="aa-stat-label">Topics finished</div></div>' +
+        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + state.lessonsDone.length + '</div><div class="aa-stat-label">Lessons done</div></div>' +
+        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + state.badges.length + '</div><div class="aa-stat-label">Badges</div></div>' +
       '</div>' +
-      '<div class="aa-section-head"><h2>Three courses. One academy.</h2><p>Complete independently or in sequence: Notion first, then n8n, then integration.</p></div>' +
+      '<div class="aa-section-head"><h2>Three easy steps</h2><p>Follow them in order. Each course builds on the last, but you can pause anytime.</p></div>' +
       '<div class="aa-course-grid">' +
-        meta.courses.map(function (c) {
+        meta.courses.map(function (c, idx) {
           const p = courseProgress(c.id);
           return (
             '<button type="button" class="aa-course-card glass-panel" data-open-course="' + esc(c.id) + '">' +
               '<div class="aa-course-accent" style="background:' + esc(c.color) + '"></div>' +
+              '<p class="aa-eyebrow">Step ' + (idx + 1) + '</p>' +
               '<h3>' + esc(c.title) + '</h3>' +
               '<p>' + esc(c.blurb) + '</p>' +
+              '<p class="aa-plain-goal">' + esc(c.plainGoal || '') + '</p>' +
               '<div class="aa-meta-row">' +
                 '<span class="aa-chip">' + esc(c.level) + '</span>' +
-                '<span class="aa-chip">' + c.modules + ' modules</span>' +
-                '<span class="aa-chip">~' + c.durationHours + 'h</span>' +
+                '<span class="aa-chip">' + c.modules + ' short topics</span>' +
                 '<span class="aa-chip' + (p.pct === 100 ? ' done' : '') + '">' + p.pct + '% done</span>' +
               '</div>' +
             '</button>'
           );
         }).join('') +
-      '</div>' +
-      '<div class="aa-section-head"><h2>Continue learning</h2></div>' +
-      '<div class="aa-course-grid">' +
-        '<article class="aa-lesson-card glass-panel"><h3>Notion Mastery</h3><p class="aa-summary">' + n.modulesDone + '/' + n.modules + ' modules · ' + n.pct + '%</p><button class="btn btn-glass btn-sm" type="button" data-open-course="notion">Open course</button></article>' +
-        '<article class="aa-lesson-card glass-panel"><h3>n8n Automation</h3><p class="aa-summary">' + a.modulesDone + '/' + a.modules + ' modules · ' + a.pct + '%</p><button class="btn btn-glass btn-sm" type="button" data-open-course="n8n">Open course</button></article>' +
-        '<article class="aa-lesson-card glass-panel"><h3>Integration</h3><p class="aa-summary">' + i.modulesDone + '/' + i.modules + ' modules · ' + i.pct + '%</p><button class="btn btn-glass btn-sm" type="button" data-open-course="integration">Open course</button></article>' +
       '</div>'
     );
   }
@@ -280,8 +343,18 @@
   function renderPathway() {
     const meta = AA_META;
     return (
-      '<div class="aa-section-head"><h2>Learning Pathway</h2><p>' + esc(meta.subtitle) + '</p></div>' +
-      '<div class="aa-path-steps">' +
+      breadcrumbs([{ label: 'Home', action: 'overview' }, { label: 'How to learn' }]) +
+      '<div class="aa-section-head"><h2>How to learn this academy</h2><p>' + esc(meta.startHint) + '</p></div>' +
+      '<article class="aa-lesson-card glass-panel">' +
+        '<h3>Keep it simple</h3>' +
+        '<ul>' +
+          '<li>Do one short topic at a time (about 20-40 minutes).</li>' +
+          '<li>Read the example, then try the practice step.</li>' +
+          '<li>Skip nothing scary: technical words are explained in plain English first.</li>' +
+          '<li>Use free tools only - you do not need paid software to learn.</li>' +
+        '</ul>' +
+      '</article>' +
+      '<div class="aa-path-steps" style="margin-top:12px">' +
         meta.courses.map(function (c, idx) {
           const p = courseProgress(c.id);
           return (
@@ -289,38 +362,31 @@
               '<div class="num">' + (idx + 1) + '</div>' +
               '<div>' +
                 '<h3 style="font-size:16px;margin-bottom:4px">' + esc(c.title) + '</h3>' +
-                '<p style="font-size:13px;color:var(--text-secondary);margin-bottom:8px">' + esc(c.blurb) + '</p>' +
-                '<div class="aa-meta-row" style="margin-bottom:10px">' +
+                '<p style="font-size:13px;color:var(--text-secondary);margin-bottom:6px">' + esc(c.blurb) + '</p>' +
+                '<p class="aa-plain-goal">' + esc(c.plainGoal || '') + '</p>' +
+                '<div class="aa-meta-row" style="margin:10px 0">' +
                   '<span class="aa-chip">' + esc(c.level) + '</span>' +
-                  '<span class="aa-chip">' + p.modulesDone + '/' + c.modules + ' modules</span>' +
-                  '<span class="aa-chip">' + p.pct + '%</span>' +
+                  '<span class="aa-chip">' + p.modulesDone + '/' + c.modules + ' topics done</span>' +
                 '</div>' +
                 '<div class="aa-progress-bar"><div class="aa-progress-fill" style="width:' + p.pct + '%"></div></div>' +
-                '<button class="btn btn-primary btn-sm" type="button" data-open-course="' + esc(c.id) + '">Enter course</button>' +
+                '<button class="btn btn-primary btn-sm" type="button" data-open-course="' + esc(c.id) + '">Open this course</button>' +
               '</div>' +
             '</article>'
           );
         }).join('') +
-      '</div>' +
-      '<article class="aa-lesson-card glass-panel" style="margin-top:14px">' +
-        '<h3>Recommended order</h3>' +
-        '<ul><li>Start with Notion Mastery so you can design databases before automating them.</li>' +
-        '<li>Move to n8n Automation Mastery using Docker Desktop Community Edition (free).</li>' +
-        '<li>Finish with Notion + n8n + AI to connect knowledge, automation, and governance.</li></ul>' +
-        '<button class="btn btn-glass btn-sm" type="button" data-goto="assessment">Take pathway assessment</button>' +
-      '</article>'
+      '</div>'
     );
   }
 
   function renderCourse(courseId) {
     const course = COURSES[courseId];
     if (!course) return '<p>Course data missing.</p>';
+    const meta = courseMeta(courseId) || { title: course.title, shortTitle: course.title };
     const p = courseProgress(courseId);
-    const free = course.freeNote || course.freeVsPaid
-      ? ('<p class="aa-callout"><strong>Free vs paid:</strong> ' + esc(typeof course.freeNote === 'string' ? course.freeNote : (course.description || 'Designed for free self-hosted tooling.')) + '</p>')
-      : '';
+    const nextMod = course.modules.find(function (m) { return !state.modulesDone.includes(m.id); }) || course.modules[0];
+    const freeNote = typeof course.freeNote === 'string' ? course.freeNote : '';
     const freeTable = course.freeVsPaid
-      ? ('<div class="glass-panel" style="padding:1rem;margin:12px 0;overflow:auto"><table class="af-compare-table" style="width:100%;font-size:13px"><thead><tr><th>Item</th><th>Status</th></tr></thead><tbody>' +
+      ? ('<details class="aa-details glass-panel"><summary>Optional: free vs paid notes</summary><div style="padding:0 1rem 1rem;overflow:auto"><table class="af-compare-table" style="width:100%;font-size:13px"><thead><tr><th>Item</th><th>Status</th></tr></thead><tbody>' +
         (Array.isArray(course.freeVsPaid)
           ? course.freeVsPaid.map(function (row) {
               if (typeof row === 'string') return '<tr><td colspan="2">' + esc(row) + '</td></tr>';
@@ -331,23 +397,33 @@
               if (Array.isArray(v)) return '<tr><td>' + esc(k) + '</td><td>' + esc(v.join('; ')) + '</td></tr>';
               return '<tr><td>' + esc(k) + '</td><td>' + esc(String(v)) + '</td></tr>';
             }).join('')) +
-        '</tbody></table></div>')
+        '</tbody></table></div></details>')
       : '';
 
     return (
+      breadcrumbs([
+        { label: 'Home', action: 'overview' },
+        { label: meta.shortTitle || meta.title }
+      ]) +
       '<div class="aa-section-head">' +
-        '<h2>' + esc(course.title) + '</h2>' +
-        '<p>' + esc(course.description || '') + '</p>' +
+        '<h2>' + esc(meta.title || course.title) + '</h2>' +
+        '<p>' + esc(plainCourseBlurb(courseId) || course.description || '') + '</p>' +
       '</div>' +
-      free + freeTable +
+      (freeNote ? ('<p class="aa-callout"><strong>You can stay on free tools:</strong> ' + esc(freeNote) + '</p>') : '') +
+      freeTable +
+      '<div class="aa-continue glass-panel" style="margin:12px 0">' +
+        '<div><p class="aa-eyebrow">Suggested next step</p>' +
+        '<h3 style="font-size:15px;margin:4px 0">Module ' + nextMod.number + ': ' + esc(nextMod.title) + '</h3>' +
+        '<p style="font-size:13px;color:var(--text-secondary)">About ' + nextMod.durationMin + ' minutes</p></div>' +
+        '<button class="btn btn-primary" type="button" data-open-module="' + esc(nextMod.id) + '" data-course="' + esc(courseId) + '">Start this topic</button>' +
+      '</div>' +
       '<div class="aa-stat-grid">' +
-        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + p.pct + '%</div><div class="aa-stat-label">Course progress</div></div>' +
-        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + p.modulesDone + '/' + p.modules + '</div><div class="aa-stat-label">Modules</div></div>' +
-        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + p.done + '/' + p.lessons + '</div><div class="aa-stat-label">Lessons</div></div>' +
-        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + (course.prerequisites ? (Array.isArray(course.prerequisites) ? course.prerequisites.length : 1) : 0) + '</div><div class="aa-stat-label">Prereq notes</div></div>' +
+        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + p.pct + '%</div><div class="aa-stat-label">Progress</div></div>' +
+        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + p.modulesDone + '/' + p.modules + '</div><div class="aa-stat-label">Topics done</div></div>' +
+        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + p.done + '/' + p.lessons + '</div><div class="aa-stat-label">Lessons done</div></div>' +
+        '<div class="aa-stat glass-panel"><div class="aa-stat-value">' + esc((meta.level || 'Beginner friendly')) + '</div><div class="aa-stat-label">Level</div></div>' +
       '</div>' +
-      (course.prerequisites ? ('<p class="aa-callout"><strong>Prerequisites:</strong> ' + esc(Array.isArray(course.prerequisites) ? course.prerequisites.join(' · ') : course.prerequisites) + '</p>') : '') +
-      '<div class="aa-section-head"><h2>Modules</h2></div>' +
+      '<div class="aa-section-head"><h2>Topics in this course</h2><p>Open any topic. We recommend going in order from 1 upward.</p></div>' +
       '<div class="aa-module-list">' +
         course.modules.map(function (m) {
           const done = state.modulesDone.includes(m.id);
@@ -357,11 +433,11 @@
               '<div class="aa-mod-num' + (done ? ' done' : '') + '">' + (done ? '<i class="ti ti-check"></i>' : m.number) + '</div>' +
               '<div>' +
                 '<div class="aa-mod-title">' + esc(m.title) + '</div>' +
-                '<div class="aa-mod-sub">' + esc(m.level) + ' · ~' + m.durationMin + ' min · ' + lessonDone + '/' + (m.lessons || []).length + ' lessons' +
+                '<div class="aa-mod-sub">About ' + m.durationMin + ' min · ' + lessonDone + '/' + (m.lessons || []).length + ' lessons' +
                   (state.quizScores[m.id] != null ? (' · Quiz ' + state.quizScores[m.id] + '%') : '') +
                 '</div>' +
               '</div>' +
-              '<span class="aa-chip' + (done ? ' done' : '') + '">' + (done ? 'Complete' : 'Open') + '</span>' +
+              '<span class="aa-chip' + (done ? ' done' : '') + '">' + (done ? 'Done' : 'Open') + '</span>' +
             '</button>'
           );
         }).join('') +
@@ -371,43 +447,58 @@
 
   function renderModule() {
     const mod = findModule(state.courseId, state.moduleId);
-    if (!mod) return '<p>Module not found.</p><button class="btn btn-glass" type="button" data-goto="' + esc(state.courseId || 'overview') + '">Back</button>';
-    const completeReady = tryCompleteModule(mod);
-    void completeReady;
+    if (!mod) return '<p>Topic not found.</p><button class="btn btn-glass" type="button" data-goto="' + esc(state.courseId || 'overview') + '">Back</button>';
+    tryCompleteModule(mod);
+    const meta = courseMeta(state.courseId) || { shortTitle: state.courseId };
+    const sib = siblingModules(state.courseId, mod.id);
 
     return (
-      '<button class="btn btn-glass btn-sm" type="button" data-goto="' + esc(state.courseId) + '"><i class="ti ti-arrow-left"></i> Back to course</button>' +
+      breadcrumbs([
+        { label: 'Home', action: 'overview' },
+        { label: meta.shortTitle || 'Course', action: 'course:' + state.courseId },
+        { label: 'Topic ' + mod.number }
+      ]) +
+      '<div class="aa-pager">' +
+        (sib.prev
+          ? ('<button class="btn btn-glass btn-sm" type="button" data-open-module="' + esc(sib.prev.id) + '" data-course="' + esc(state.courseId) + '"><i class="ti ti-arrow-left"></i> Previous</button>')
+          : '<button class="btn btn-glass btn-sm" type="button" data-goto="' + esc(state.courseId) + '"><i class="ti ti-arrow-left"></i> Course list</button>') +
+        (sib.next
+          ? ('<button class="btn btn-primary btn-sm" type="button" data-open-module="' + esc(sib.next.id) + '" data-course="' + esc(state.courseId) + '">Next topic <i class="ti ti-arrow-right"></i></button>')
+          : '<button class="btn btn-primary btn-sm" type="button" data-goto="' + esc(state.courseId) + '">Back to course</button>') +
+      '</div>' +
       '<section class="aa-hero glass-panel" style="margin-top:12px">' +
-        '<p class="aa-eyebrow">Module ' + mod.number + ' · ' + esc(mod.level) + ' · ~' + mod.durationMin + ' min</p>' +
+        '<p class="aa-eyebrow">Topic ' + mod.number + ' of ' + (COURSES[state.courseId] ? COURSES[state.courseId].modules.length : '?') + ' · About ' + mod.durationMin + ' minutes</p>' +
         '<h2>' + esc(mod.title) + '</h2>' +
-        (mod.freeNote ? ('<p class="aa-callout"><strong>Free note:</strong> ' + esc(mod.freeNote) + '</p>') : '') +
-        '<h3 style="font-size:13px;margin-top:12px;color:var(--text-muted)">Learning objectives</h3>' +
+        '<p class="aa-plain-goal">In plain English: work through the short lessons below, try the practice, then take a quick check quiz.</p>' +
+        (mod.freeNote ? ('<p class="aa-callout"><strong>Stay free:</strong> ' + esc(mod.freeNote) + '</p>') : '') +
+        '<h3 style="font-size:13px;margin-top:12px;color:var(--text-muted)">What you will be able to do</h3>' +
         '<ul style="padding-left:1.15rem;font-size:13px;color:var(--text-secondary);margin-top:6px">' +
           (mod.objectives || []).map(function (o) { return '<li>' + esc(o) + '</li>'; }).join('') +
         '</ul>' +
       '</section>' +
-      '<div class="aa-section-head"><h2>Lessons</h2></div>' +
-      (mod.lessons || []).map(function (lesson) {
+      '<div class="aa-section-head"><h2>Lessons</h2><p>Read one card at a time. Mark complete when it makes sense.</p></div>' +
+      (mod.lessons || []).map(function (lesson, li) {
         const done = state.lessonsDone.includes(lesson.id);
         return (
           '<article class="aa-lesson-card glass-panel" id="lesson-' + esc(lesson.id) + '">' +
             '<div class="aa-meta-row" style="margin-bottom:8px">' +
-              '<span class="aa-chip">' + esc(lesson.type || 'reading') + '</span>' +
-              (done ? '<span class="aa-chip done">Completed</span>' : '') +
+              '<span class="aa-chip">Lesson ' + (li + 1) + '</span>' +
+              '<span class="aa-chip">' + esc(friendlyLessonType(lesson.type)) + '</span>' +
+              (done ? '<span class="aa-chip done">Done</span>' : '') +
             '</div>' +
             '<h3>' + esc(lesson.title) + '</h3>' +
             '<p class="aa-summary">' + esc(lesson.summary) + '</p>' +
-            '<h4 style="font-size:12px;color:var(--text-muted)">Key points</h4>' +
+            '<h4 style="font-size:12px;color:var(--text-muted)">Remember these points</h4>' +
             '<ul>' + (lesson.points || []).map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>' +
             (lesson.steps && lesson.steps.length
-              ? ('<h4 style="font-size:12px;color:var(--text-muted)">Steps</h4><ul>' + lesson.steps.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>')
+              ? ('<h4 style="font-size:12px;color:var(--text-muted)">Do this</h4><ul>' + lesson.steps.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>')
               : '') +
-            '<div class="aa-callout"><strong>Real-world example:</strong> ' + esc(lesson.example) + '</div>' +
+            '<div class="aa-callout"><strong>Everyday example:</strong> ' + esc(lesson.example) + '</div>' +
             '<h4 style="font-size:12px;color:var(--text-muted);margin-top:10px">Takeaways</h4>' +
             '<ul>' + (lesson.takeaways || []).map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>' +
-            '<div class="aa-callout warn"><strong>Common mistakes:</strong> ' + esc((lesson.mistakes || []).join(' · ')) + '</div>' +
+            '<div class="aa-callout warn"><strong>Watch out for:</strong> ' + esc((lesson.mistakes || []).join(' · ')) + '</div>' +
             '<button class="btn ' + (done ? 'btn-glass' : 'btn-primary') + ' btn-sm" style="margin-top:12px" type="button" data-mark-lesson="' + esc(lesson.id) + '">' +
-              (done ? 'Completed' : 'Mark lesson complete') +
+              (done ? 'Lesson done' : 'Mark this lesson done') +
             '</button>' +
           '</article>'
         );
@@ -415,8 +506,14 @@
       renderExercise(mod) +
       renderModuleQuiz(mod) +
       renderCapstone(mod) +
-      '<div style="margin:1rem 0">' +
-        '<button class="btn btn-primary" type="button" data-finish-module="' + esc(mod.id) + '">Check module completion</button>' +
+      '<div class="aa-pager aa-pager-bottom">' +
+        (sib.prev
+          ? ('<button class="btn btn-glass" type="button" data-open-module="' + esc(sib.prev.id) + '" data-course="' + esc(state.courseId) + '"><i class="ti ti-arrow-left"></i> Previous topic</button>')
+          : '<span></span>') +
+        '<button class="btn btn-glass" type="button" data-finish-module="' + esc(mod.id) + '">Check if topic is complete</button>' +
+        (sib.next
+          ? ('<button class="btn btn-primary" type="button" data-open-module="' + esc(sib.next.id) + '" data-course="' + esc(state.courseId) + '">Next topic <i class="ti ti-arrow-right"></i></button>')
+          : '<button class="btn btn-primary" type="button" data-goto="' + esc(state.courseId) + '">Finish - back to course</button>') +
       '</div>'
     );
   }
@@ -426,15 +523,15 @@
     const ex = mod.exercise;
     const done = state.exercisesDone.includes(mod.id);
     return (
-      '<div class="aa-section-head"><h2>Practice exercise</h2></div>' +
+      '<div class="aa-section-head"><h2>Try it yourself</h2><p>A short practice. Follow the steps at your own pace.</p></div>' +
       '<article class="aa-lesson-card glass-panel">' +
         '<h3>' + esc(ex.title) + '</h3>' +
         '<p class="aa-summary">' + esc(ex.scenario || '') + '</p>' +
         '<h4 style="font-size:12px;color:var(--text-muted)">Steps</h4>' +
         '<ul>' + (ex.steps || []).map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ul>' +
-        '<div class="aa-callout"><strong>Deliverable:</strong> ' + esc(ex.deliverable || '') + '</div>' +
+        '<div class="aa-callout"><strong>What to produce:</strong> ' + esc(ex.deliverable || '') + '</div>' +
         '<button class="btn ' + (done ? 'btn-glass' : 'btn-primary') + ' btn-sm" style="margin-top:12px" type="button" data-mark-exercise="' + esc(mod.id) + '">' +
-          (done ? 'Exercise completed' : 'Mark exercise complete') +
+          (done ? 'Practice done' : 'I finished this practice') +
         '</button>' +
       '</article>'
     );
@@ -458,12 +555,12 @@
         '<p id="aa-quiz-feedback" style="margin-top:8px;font-size:13px;color:var(--text-secondary)"></p>';
     } else {
       body =
-        '<p class="aa-summary">Knowledge check · ' + (mod.quiz || []).length + ' questions' +
-        (score != null ? (' · Last score: ' + score + '%') : '') + '</p>' +
-        '<button class="btn btn-primary btn-sm" type="button" data-start-quiz="' + esc(mod.id) + '">Start quiz</button>';
+        '<p class="aa-summary">Quick check · ' + (mod.quiz || []).length + ' easy questions. Pass with 70%.' +
+        (score != null ? (' Last score: ' + score + '%.') : '') + '</p>' +
+        '<button class="btn btn-primary btn-sm" type="button" data-start-quiz="' + esc(mod.id) + '">Start quick check</button>';
     }
     return (
-      '<div class="aa-section-head"><h2>Knowledge check</h2></div>' +
+      '<div class="aa-section-head"><h2>Quick check</h2><p>No trick questions - just confirm the main ideas.</p></div>' +
       '<article class="aa-lesson-card glass-panel" id="aa-quiz-panel">' + body + '</article>'
     );
   }
@@ -515,9 +612,10 @@
     });
 
     return (
+      breadcrumbs([{ label: 'Home', action: 'overview' }, { label: 'Try a workflow' }]) +
       '<div class="aa-section-head">' +
-        '<h2>Interactive Workflow Simulator</h2>' +
-        '<p>Educational simulation only - not a live n8n editor. Inspect sample data flow between nodes.</p>' +
+        '<h2>Try a workflow (practice playground)</h2>' +
+        '<p>This is a friendly demo. It shows how steps connect. It is not the real n8n app - just a safe place to learn the idea.</p>' +
       '</div>' +
       '<div class="aa-meta-row" style="margin-bottom:12px">' +
         flows.map(function (f) {
@@ -605,7 +703,8 @@
         '<button class="btn btn-primary btn-sm" type="button" data-start-pathway-quiz>Start pathway assessment</button>';
     }
     return (
-      '<div class="aa-section-head"><h2>Pathway Assessment</h2><p>Cross-course check covering architecture, free tooling, security, and governance.</p></div>' +
+      breadcrumbs([{ label: 'Home', action: 'overview' }, { label: 'Final quiz' }]) +
+      '<div class="aa-section-head"><h2>Final quiz</h2><p>A short wrap-up quiz after you have explored the three courses. Pass at 75%.</p></div>' +
       '<article class="aa-lesson-card glass-panel" id="aa-quiz-panel">' + body + '</article>'
     );
   }
@@ -620,7 +719,8 @@
     const name = localStorage.getItem(STORAGE.certName) || '';
 
     return (
-      '<div class="aa-section-head"><h2>Academy Certificate</h2><p>Unlock by completing all three courses and passing the pathway assessment (75%+).</p></div>' +
+      breadcrumbs([{ label: 'Home', action: 'overview' }, { label: 'Certificate' }]) +
+      '<div class="aa-section-head"><h2>Your certificate</h2><p>Unlock it by finishing all three courses and the final quiz (75%+). No rush - learn at your pace.</p></div>' +
       '<article class="aa-cert-card glass-panel' + (unlocked ? '' : ' locked') + '">' +
         '<p class="aa-eyebrow">Workflow Automation & Productivity</p>' +
         '<h2 style="font-size:1.5rem;margin:8px 0">Notion & n8n Automation Academy</h2>' +
@@ -779,8 +879,15 @@
         const mod = findModule(state.courseId, btn.dataset.finishModule);
         if (!mod) return;
         if (tryCompleteModule(mod)) toast('Module requirements met');
-        else toast('Finish lessons, exercise, quiz (70%+), and checklist first');
+        else toast('Almost there: finish lessons, practice, quiz (70%+), and any checklist');
         render();
+      });
+    });
+    document.querySelectorAll('[data-crumb]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var a = btn.dataset.crumb || '';
+        if (a.indexOf('course:') === 0) openCourse(a.slice(7));
+        else setView(a);
       });
     });
     document.querySelectorAll('[data-capstone]').forEach(function (input) {
