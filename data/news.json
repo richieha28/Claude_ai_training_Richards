@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2026-11-27T16:05:53.806Z",
+  "lastFetched": "2026-11-28T15:00:01.786Z",
   "status": "ok",
   "sources": [
     {
@@ -44,7 +44,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/video-trainium3",
-      "fetchedAt": "2026-11-27T16:05:53.711Z"
+      "fetchedAt": "2026-11-28T15:00:01.735Z"
     },
     {
       "headline": "Come for the Games, Stay for the Community With GeForce NOW",
@@ -56,7 +56,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-community-war-thunder-reward/",
-      "fetchedAt": "2026-11-27T16:05:53.742Z"
+      "fetchedAt": "2026-11-28T15:00:01.714Z"
     },
     {
       "headline": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
@@ -68,7 +68,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
-      "fetchedAt": "2026-11-27T16:05:53.711Z"
+      "fetchedAt": "2026-11-28T15:00:01.735Z"
     },
     {
       "headline": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
@@ -80,7 +80,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
-      "fetchedAt": "2026-11-27T16:05:53.711Z"
+      "fetchedAt": "2026-11-28T15:00:01.735Z"
     },
     {
       "headline": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
@@ -92,7 +92,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/training-swarms",
-      "fetchedAt": "2026-11-27T16:05:53.711Z"
+      "fetchedAt": "2026-11-28T15:00:01.735Z"
     },
     {
       "headline": "Where scientists draw the line on AI agents",
@@ -104,7 +104,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
-      "fetchedAt": "2026-11-27T16:05:53.711Z"
+      "fetchedAt": "2026-11-28T15:00:01.735Z"
     },
     {
       "headline": "An Indic Voice Agent with CUGA",
@@ -116,7 +116,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
-      "fetchedAt": "2026-11-27T16:05:53.711Z"
+      "fetchedAt": "2026-11-28T15:00:01.735Z"
     },
     {
       "headline": "Hill-climbing Inkling 2 Mini inference on one RTX PRO 6000",
@@ -128,7 +128,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb",
-      "fetchedAt": "2026-11-27T16:05:53.711Z"
+      "fetchedAt": "2026-11-28T15:00:01.735Z"
     },
     {
       "headline": "How Gemini is changing the game for Golden State's organization and fans.",
@@ -140,7 +140,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state/",
-      "fetchedAt": "2026-11-27T16:05:53.806Z"
+      "fetchedAt": "2026-11-28T15:00:01.720Z"
     },
     {
       "headline": "From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity",
@@ -152,7 +152,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
-      "fetchedAt": "2026-11-27T16:05:53.800Z"
+      "fetchedAt": "2026-11-28T15:00:01.786Z"
     },
     {
       "headline": "GPT-6 models demonstrate intrinsic protein-design capabilities",
@@ -164,7 +164,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
-      "fetchedAt": "2026-11-27T16:05:53.648Z"
+      "fetchedAt": "2026-11-28T15:00:01.531Z"
     },
     {
       "headline": "Searching for distant planets with Astra",
@@ -176,7 +176,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
-      "fetchedAt": "2026-11-27T16:05:53.649Z"
+      "fetchedAt": "2026-11-28T15:00:01.532Z"
     },
     {
       "headline": "How Intentful uses dots to make more time for growth",
@@ -188,7 +188,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/business/customer-stories/intentful-dots",
-      "fetchedAt": "2026-11-27T16:05:53.649Z"
+      "fetchedAt": "2026-11-28T15:00:01.532Z"
     },
     {
       "headline": "How iFood scales coding agents across 15,000 repositories",
@@ -200,7 +200,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/business/customer-stories/ifood",
-      "fetchedAt": "2026-11-27T16:05:53.649Z"
+      "fetchedAt": "2026-11-28T15:00:01.533Z"
     },
     {
       "headline": "Clay helps sales teams win with Codex and ChatGPT",
@@ -212,7 +212,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/business/customer-stories/clay-plugins-openai",
-      "fetchedAt": "2026-11-27T16:05:53.649Z"
+      "fetchedAt": "2026-11-28T15:00:01.533Z"
     },
     {
       "headline": "OpenAI and Cisco introduce Shirudo",
@@ -224,7 +224,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/index/introducing-shirudo",
-      "fetchedAt": "2026-11-27T16:05:53.649Z"
+      "fetchedAt": "2026-11-28T15:00:01.533Z"
     },
     {
       "headline": "Merry Making: Play, Build and Create With NVIDIA Technologies This Holiday Season",
@@ -236,7 +236,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.nvidia.com/blog/nvidia-technologies-holidays-2026/",
-      "fetchedAt": "2026-11-27T16:05:53.742Z"
+      "fetchedAt": "2026-11-28T15:00:01.714Z"
     },
     {
       "headline": "A more tailored Google Search that’s uniquely yours",
@@ -248,7 +248,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
-      "fetchedAt": "2026-11-27T16:05:53.806Z"
+      "fetchedAt": "2026-11-28T15:00:01.720Z"
     },
     {
       "headline": "Finding faster quantum algorithms with agents and formal verification",
@@ -260,7 +260,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
-      "fetchedAt": "2026-11-27T16:05:53.800Z"
+      "fetchedAt": "2026-11-28T15:00:01.786Z"
     },
     {
       "headline": "NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director",
@@ -272,7 +272,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
-      "fetchedAt": "2026-11-27T16:05:53.742Z"
+      "fetchedAt": "2026-11-28T15:00:01.714Z"
     },
     {
       "headline": "Connected intelligence for in-house legal",
@@ -284,7 +284,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
-      "fetchedAt": "2026-11-27T16:05:53.649Z"
+      "fetchedAt": "2026-11-28T15:00:01.533Z"
     },
     {
       "headline": "Richpanel helps companies automate 50% of support in 30 days",
@@ -296,7 +296,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
-      "fetchedAt": "2026-11-27T16:05:53.649Z"
+      "fetchedAt": "2026-11-28T15:00:01.533Z"
     },
     {
       "headline": "How to build and maintain an agentic evaluation",
@@ -308,7 +308,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://huggingface.co/blog/agentic-evals",
-      "fetchedAt": "2026-11-27T16:05:53.711Z"
+      "fetchedAt": "2026-11-28T15:00:01.735Z"
     },
     {
       "headline": "NVIDIA Announces Upcoming Event for Financial Community",
@@ -320,7 +320,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://nvidianews.nvidia.com/news/nvidia-announces-upcoming-event-for-financial-community-6929322",
-      "fetchedAt": "2026-11-27T16:05:53.742Z"
+      "fetchedAt": "2026-11-28T15:00:01.714Z"
     },
     {
       "headline": "NVIDIA and Microsoft Expand Accelerated Computing From Azure to Windows PCs",
@@ -332,7 +332,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.nvidia.com/blog/microsoft-ignite-accelerated-computing-azure-windows-pcs/",
-      "fetchedAt": "2026-11-27T16:05:53.742Z"
+      "fetchedAt": "2026-11-28T15:00:01.714Z"
     },
     {
       "headline": "Introducing Tool Retrieval in the Gemini API",
@@ -344,7 +344,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
-      "fetchedAt": "2026-11-27T16:05:53.806Z"
+      "fetchedAt": "2026-11-28T15:00:01.720Z"
     },
     {
       "headline": "Walter Isaacson on curiosity and creativity in the AI age.",
@@ -356,7 +356,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/innovation-and-ai/technology/ai/dialogues-walter-isaacson/",
-      "fetchedAt": "2026-11-27T16:05:53.806Z"
+      "fetchedAt": "2026-11-28T15:00:01.720Z"
     },
     {
       "headline": "Season’s Streamings and Savings: Black Friday Deals Come to GeForce NOW",
@@ -368,7 +368,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-black-friday-2026/",
-      "fetchedAt": "2026-11-27T16:05:53.742Z"
+      "fetchedAt": "2026-11-28T15:00:01.714Z"
     },
     {
       "headline": "Introducing Gemini 4 Neon",
@@ -380,7 +380,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://deepmind.google/blog/introducing-gemini-4-neon/",
-      "fetchedAt": "2026-11-27T16:05:53.800Z"
+      "fetchedAt": "2026-11-28T15:00:01.786Z"
     },
     {
       "headline": "Genie 4 is now available",
@@ -392,7 +392,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://deepmind.google/blog/genie-4-is-now-available/",
-      "fetchedAt": "2026-11-27T16:05:53.800Z"
+      "fetchedAt": "2026-11-28T15:00:01.786Z"
     },
     {
       "headline": "The Gemini app is now available on lower-memory Android devices.",
@@ -404,7 +404,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
-      "fetchedAt": "2026-11-27T16:05:53.806Z"
+      "fetchedAt": "2026-11-28T15:00:01.720Z"
     },
     {
       "headline": "NVIDIA RTX Spark Compact Desktops Out Now",
@@ -416,7 +416,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.nvidia.com/blog/rtx-spark-desktop-local-ai-available-now/",
-      "fetchedAt": "2026-11-27T16:05:53.742Z"
+      "fetchedAt": "2026-11-28T15:00:01.714Z"
     },
     {
       "headline": "NVIDIA Expands Commitments With Supply Chain Partners to Support AI Infrastructure Buildout",
@@ -428,7 +428,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://nvidianews.nvidia.com/news/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout",
-      "fetchedAt": "2026-11-27T16:05:53.742Z"
+      "fetchedAt": "2026-11-28T15:00:01.714Z"
     },
     {
       "headline": "Ignite 2026: Building the frontier ecosystem",
@@ -440,7 +440,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.microsoft.com/blog/2026/11/17/ignite-2026-building-the-frontier-ecosystem/",
-      "fetchedAt": "2026-11-27T16:05:53.653Z"
+      "fetchedAt": "2026-11-28T15:00:01.538Z"
     },
     {
       "headline": "Put Gemini to work for you",
@@ -452,7 +452,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
-      "fetchedAt": "2026-11-27T16:05:53.806Z"
+      "fetchedAt": "2026-11-28T15:00:01.720Z"
     },
     {
       "headline": "New Ask Maps features to help with holiday travel and prep",
@@ -464,7 +464,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
-      "fetchedAt": "2026-11-27T16:05:53.806Z"
+      "fetchedAt": "2026-11-28T15:00:01.720Z"
     },
     {
       "headline": "Introducing Gemini 4 Hydrogen",
@@ -476,7 +476,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
-      "fetchedAt": "2026-11-27T16:05:53.800Z"
+      "fetchedAt": "2026-11-28T15:00:01.786Z"
     },
     {
       "headline": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
@@ -488,7 +488,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
-      "fetchedAt": "2026-11-27T16:05:53.806Z"
+      "fetchedAt": "2026-11-28T15:00:01.720Z"
     },
     {
       "headline": "From AI ambition to business impact",
@@ -500,7 +500,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.microsoft.com/blog/2026/11/12/from-ai-ambition-to-business-impact/",
-      "fetchedAt": "2026-11-27T16:05:53.653Z"
+      "fetchedAt": "2026-11-28T15:00:01.538Z"
     },
     {
       "headline": "Scaling AI value without losing control: Lessons from Frontier Firms",
@@ -512,7 +512,7 @@
       "whyItMatters": "Industry development — review the source for implications for your role.",
       "careerImplications": "",
       "url": "https://blogs.microsoft.com/blog/2026/11/12/scaling-ai-value-without-losing-control-lessons-from-frontier-firms/",
-      "fetchedAt": "2026-11-27T16:05:53.653Z"
+      "fetchedAt": "2026-11-28T15:00:01.538Z"
     }
   ]
 }
